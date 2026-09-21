@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\GoogleAuthController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -33,4 +34,14 @@ Route::middleware(['auth', 'no-back-cache'])->group(function () {
     Route::get('/', function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
+
+    Route::prefix('suppliers')->name('supplier.')->group(function(){
+        Route::get('/', [SupplierController::class, 'index'])->name('index');
+        Route::get('/{supplier}', [SupplierController::class, 'show'])->name('show');
+        Route::get('/create', [SupplierController::class, 'create'])->name('create');
+        Route::post('/', [SupplierController::class, 'store'])->name('store');
+        Route::get('/{supplier}', [SupplierController::class, 'edit'])->name('edit');
+        Route::put('/{supplier}', [SupplierController::class, 'update'])->name('update');
+        Route::delete('/{supplier}', [SupplierController::class, 'destroy'])->name('delete');
+    });
 });

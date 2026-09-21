@@ -14,3 +14,18 @@ export interface User {
     profile?: Profile | null;
     role?: string | null;
 }
+
+export interface Supplier {
+    id: number;
+    name: string;
+    phone?: string | null;
+    tel?: string | null;
+    email: string;
+    address: string;
+    tin: string;
+    image_url?: string | null;
+    image_file_id?: string | null;
+    active: boolean;
+    created_at: string;
+    updated_at: string;
+}

@@ -41,4 +41,14 @@ return [
         'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
 
+    'google_drive' => [
+        'credentials_path' => env('GOOGLE_DRIVE_CREDENTIALS_PATH'),
+        'folders' => [
+            'root'      => env('GOOGLE_DRIVE_FOLDER_ROOT'),
+            'supplier'  => env('GOOGLE_DRIVE_FOLDER_SUPPLIER'),
+            // 'personnel' => env('GOOGLE_DRIVE_FOLDER_PERSONNEL'),
+            // 'equipment' => env('GOOGLE_DRIVE_FOLDER_EQUIPMENT'),
+        ],
+    ],
+
 ];
